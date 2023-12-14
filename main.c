@@ -34,8 +34,15 @@ int main(int ac, char **av)
 		words = str_to_words(line);
 		if (words != NULL)
 		{
-			if (words[1] != NULL)
+			if (!strcmp(words[0], "push"))
+			{
+				if (words[1] == NULL)
+				{
+					dprintf(2, "L%d: usage: push integer", l_num);
+					exit(EXIT_FAILURE);
+				}
 				l_num = atoi(words[1]);
+			}
 			(get_ins_func(words[0]))(&stack, l_num);
 		}
 		free(words);
