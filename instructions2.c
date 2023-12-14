@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * ins_swap - swaps the top two elemets of stack
+ * swap - swaps the top two elemets of stack
  * @stack: the stack header
  * @line_number: the number of line of the instruction
  * Retuen: void
  */
-void ins_swap(stack_t **stack, unsigned int line_number)
+void swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *s = *stack, *prev = NULL;
 	int tmp;
@@ -25,12 +25,12 @@ void ins_swap(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * ins_add - adds the top two elemets of stack
+ * add - adds the top two elemets of stack
  * @stack: the stack header
  * @line_number: the number of line of the instruction
  * Retuen: the top integer of the stack, -1 if empty
  */
-void ins_add(stack_t **stack, unsigned int line_number)
+void add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *s = *stack, *prev = NULL;
 
@@ -48,12 +48,12 @@ void ins_add(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * ins_nop - do nothing
+ * nop - do nothing
  * @stack: the stack header
  * @line_number: the number of line of the instruction
  * Retuen: void
  */
-void ins_nop(stack_t **stack, unsigned int line_number)
+void nop(stack_t **stack, unsigned int line_number)
 {
 	if (*stack != NULL)
 		line_number++;

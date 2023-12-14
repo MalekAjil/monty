@@ -35,13 +35,13 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void ins_push(stack_t **stack, unsigned int line_number);
-void ins_pop(stack_t **stack, unsigned int line_number);
-void ins_pall(stack_t **stack, unsigned int line_number);
-void ins_pint(stack_t **stack, unsigned int line_number);
-void ins_swap(stack_t **stack, unsigned int line_number);
-void ins_add(stack_t **stack, unsigned int line_number);
-void ins_nop(stack_t **stack, unsigned int line_number);
+void push(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
 
 char **str_to_words(char *str);
 void (*get_ins_func(char *s))(stack_t **, unsigned int);

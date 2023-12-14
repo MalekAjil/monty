@@ -2,12 +2,12 @@
 #include <stdio.h>
 
 /**
- * ins_push - pushs an integer to stack
+ * push - pushs an integer to stack
  * @stack: the stack header
  * @line_number: the number of line of the instruction
  * Retuen: void
  */
-void ins_push(stack_t **stack, unsigned int line_number)
+void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *s = *stack, *prev = NULL, *new = NULL;
 
@@ -31,12 +31,12 @@ void ins_push(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * ins_pop - pops the top integer from stack
+ * pop - pops the top integer from stack
  * @stack: the stack header
  * @line_number: the number of line of the instruction
  * Retuen: the top integer of the stack, -1 if empty
  */
-void ins_pop(stack_t **stack, unsigned int line_number)
+void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *s = *stack, *prev = NULL;
 
@@ -56,12 +56,12 @@ void ins_pop(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * ins_pall - prints all members of the stack
+ * pall - prints all members of the stack
  * @stack: the stack header
  * @line_number: the number of line of the instruction
  * Retuen: void
  */
-void ins_pall(stack_t **stack, unsigned int line_number)
+void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *s = *stack, *prev = NULL;
 
@@ -81,12 +81,12 @@ void ins_pall(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * ins_pint - prints the top integer of the stack
+ * pint - prints the top integer of the stack
  * @stack: the stack header
  * @line_number: the number of line of the instruction
  * Retuen: void
  */
-void ins_pint(stack_t **stack, unsigned int line_number)
+void pint(stack_t **stack, unsigned int line_number)
 {
 	stack_t *s = *stack;
 

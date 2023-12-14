@@ -10,13 +10,13 @@ void (*get_ins_func(char *s))(stack_t **, unsigned int)
 {
 	int i;
 	instruction_t ins[] = {
-		{"push", ins_push},
-		{"pop", ins_pop},
-		{"pall", ins_pall},
-		{"pint", ins_pint},
-		{"add", ins_add},
-		{"swap", ins_swap},
-		{"nop", ins_nop},
+		{"push", push},
+		{"pop", pop},
+		{"pall", pall},
+		{"pint", pint},
+		{"add", add},
+		{"swap", swap},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 
