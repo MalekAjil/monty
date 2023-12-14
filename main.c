@@ -1,5 +1,6 @@
 #include "monty.h"
 #include <stdio.h>
+#include <string.h>
 
 /**
  * main - Entry point
@@ -18,7 +19,7 @@ int main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		dprintf(2, "USAGE: monty file\n");
+		dprintf(2, "USAGE: monty file\n", NULL);
 		exit(EXIT_FAILURE);
 	}
 	file = fopen(av[1], "r");

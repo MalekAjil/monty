@@ -52,6 +52,7 @@ void ins_pop(stack_t **stack, unsigned int line_number)
 	free(s);
 	if (prev != NULL)
 		prev->next = NULL;
+	line_number++;
 }
 
 /**
