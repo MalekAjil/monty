@@ -1,6 +1,6 @@
 #include "monty.h"
+#include <stdio.h>
 
-int gvar = -1;
 /**
  * ins_push - pushs an integer to stack
  * @stack: the stack header
@@ -22,11 +22,12 @@ void ins_push(stack_t **stack, unsigned int line_number)
 		dprintf(2, "Error: malloc faild\n");
 		exit(EXIT_FAILURE);
 	}
-	new->n = gvar;
+	new->n = line_number;
 	new->next = NULL;
 	new->prev = prev;
 	if (prev != NULL)
-		perv->next = new;
+		prev->next = new;
+	line_number++;
 }
 
 /**
@@ -35,7 +36,7 @@ void ins_push(stack_t **stack, unsigned int line_number)
  * @line_number: the number of line of the instruction
  * Retuen: the top integer of the stack, -1 if empty
  */
-int ins_pop(stack_t **stack, unsigned int line_number)
+void ins_pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *s = *stack, *prev = NULL;
 
@@ -46,7 +47,7 @@ int ins_pop(stack_t **stack, unsigned int line_number)
 		prev = s;
 		s = s->next;
 	}
-	gvar = s->n;
+	line_number = s->n;
 	printf("%d\n", s->n);
 	free(s);
 	if (prev != NULL)
@@ -75,6 +76,7 @@ void ins_pall(stack_t **stack, unsigned int line_number)
 		printf("%d\n", prev->n);
 		prev = prev->prev;
 	}
+	line_number++;
 }
 
 /**
@@ -94,4 +96,5 @@ void ins_pint(stack_t **stack, unsigned int line_number)
 		s = s->next;
 	}
 	printf("%d\n", s->n);
+	line_number++;
 }

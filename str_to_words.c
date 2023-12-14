@@ -1,4 +1,5 @@
-#include "shell.h"
+#include "monty.h"
+#include <string.h>
 
 /**
  * str_to_words - split the string into words
@@ -6,7 +7,7 @@
  * @count: words count
  * Return: the words array
  */
-char **str_to_words(char *str, int *count)
+char **str_to_words(char *str)
 {
 	char **words = NULL;
 	char *str1 = str;
@@ -33,6 +34,5 @@ char **str_to_words(char *str, int *count)
 				break;
 		}
 	}
-	*count = c;
 	return (words);
 }

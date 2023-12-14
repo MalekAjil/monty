@@ -1,12 +1,12 @@
 #include "monty.h"
 
-/*
+/**
  * get_ins_func - selects the correct function to perform the instruction
  * @s: is the opcode as argument to program
  *
  * Return: a pionter to correct function
  */
-int (*get_ins_func(char *s))(stack_t, unsigned int)
+void (*get_ins_func(char *s))(stack_t **, unsigned int)
 {
 	int i;
 	instruction_t ins[] = {

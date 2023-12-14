@@ -21,6 +21,7 @@ void ins_swap(stack_t **stack, unsigned int line_number)
 	tmp = s->n;
 	s->n = prev->n;
 	prev->n = tmp;
+	line_number++;
 }
 
 /**
@@ -43,6 +44,7 @@ void ins_add(stack_t **stack, unsigned int line_number)
 	prev->n += s->n;
 	free(s);
 	prev->next = NULL;
+	line_number++;
 }
 
 /**
@@ -53,5 +55,6 @@ void ins_add(stack_t **stack, unsigned int line_number)
  */
 void ins_nop(stack_t **stack, unsigned int line_number)
 {
-	return;
+	if (*stack != NULL)
+		line_number++;
 }

@@ -2,8 +2,6 @@
 #define _MONTY_
 
 #include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
 
 extern int gvar; /* Declaration of global variable */
 
@@ -18,9 +16,9 @@ extern int gvar; /* Declaration of global variable */
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -33,8 +31,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 void ins_push(stack_t **stack, unsigned int line_number);
@@ -45,6 +43,6 @@ void ins_swap(stack_t **stack, unsigned int line_number);
 void ins_add(stack_t **stack, unsigned int line_number);
 void ins_nop(stack_t **stack, unsigned int line_number);
 
-char **str_to_words(char *str, int *count);
-int (*get_ins_func(char *s))(stack_t, unsigned int);
+char **str_to_words(char *str);
+void (*get_ins_func(char *s))(stack_t **, unsigned int);
 #endif
