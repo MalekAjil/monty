@@ -1,5 +1,4 @@
 #include "monty.h"
-#include <stdio.h>
 #include <string.h>
 
 /**
@@ -19,7 +18,7 @@ int main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		dprintf(2, "USAGE: monty file\n", NULL);
+		dprintf(2, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	file = fopen(av[1], "r");
@@ -46,7 +45,6 @@ int main(int ac, char **av)
 			(get_ins_func(words[0]))(&stack, l_num);
 		}
 		free(words);
-		line = NULL;
 	}
 	fclose(file);
 	free(line);
