@@ -10,17 +10,23 @@ char **str_to_words(char *str)
 {
 	char **words = NULL;
 	char *str1 = str;
-	int i, c = 0;
+	int i = 0, c = 0, flag = 1;
 
 	if (str == NULL)
 		return (NULL);
-	while (*str1 != '\0')
+	while (str1[i])
 	{
-		if ((*str1 == ' ' || *str1 == '\n') && *str1 != *str
-				&& (*(str1 - 1) != ' ' || *(str1 - 1) != '\n'))
+		printf("str: %c | c: %d\n", str[i], c);
+		if ((str[i] != ' ' && str[i] != '\n') && flag == 1)
+		{
 			c++;
-		str1++;
+			flag = 0;
+		}
+		if (str[i + 1] && (str[i + 1] == ' ' || str[i + 1] == '\n'))
+			flag = 1;
+		i++;
 	}
+	printf("count: %d", c);
 	if (c > 0)
 	{
 		words = malloc(sizeof(char *) * (c));

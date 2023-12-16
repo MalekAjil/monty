@@ -30,9 +30,11 @@ int main(int ac, char **av)
 	while ((getline(&line, &n, file)) != -1)
 	{
 		l_num++;
+		printf("line %d *%s*", l_num, line);
 		words = str_to_words(line);
 		if (words != NULL)
 		{
+			printf("word0 = %s", words[0]);
 			if (!strcmp(words[0], "push"))
 			{
 				if (words[1] == NULL)
@@ -40,7 +42,9 @@ int main(int ac, char **av)
 					dprintf(2, "L%d: usage: push integer", l_num);
 					exit(EXIT_FAILURE);
 				}
+				printf("word[1] = %s", words[1]);
 				l_num = atoi(words[1]);
+				printf("Lnum : %d", l_num);
 			}
 			(get_ins_func(words[0]))(&stack, l_num);
 		}
