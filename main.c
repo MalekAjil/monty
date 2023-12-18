@@ -33,7 +33,7 @@ int main(int ac, char **av)
 		{
 			if (!strcmp(words[0], "push"))
 			{
-				if (words[1] == NULL)
+				if (words[1] == NULL || atoi(words[1]) == NULL)
 				{
 					dprintf(2, "L%d: usage: push integer\n", l_num);
 					exit(EXIT_FAILURE);

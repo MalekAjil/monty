@@ -27,7 +27,7 @@ void (*get_ins_func(char *s, unsigned int line))(stack_t **, unsigned int)
 			return (ins[i].f);
 		i++;
 	}
-	dprintf(2, "L%d: unknown instruction %s", line, s);
+	dprintf(2, "L%d: unknown instruction %s\n", line, s);
 	exit(EXIT_FAILURE);
 	return (NULL);
 }
