@@ -10,11 +10,6 @@ void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *s = *stack, *prev = NULL;
 
-	if (s == NULL)
-	{
-		dprintf(2, "L%d: can't pint, stack empty\n", line_number);
-		exit(EXIT_FAILURE);
-	}
 	while (s != NULL)
 	{
 		prev = s;
@@ -25,4 +20,6 @@ void pall(stack_t **stack, unsigned int line_number)
 		printf("%d\n", prev->n);
 		prev = prev->prev;
 	}
+	if (line_number == 0)
+		line_number++;
 }
