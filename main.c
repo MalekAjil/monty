@@ -46,6 +46,7 @@ int main(int ac, char **av)
 		}
 	}
 	fclose(file);
+	free_stack(&stack);
 	free(line);
 	return (0);
 }

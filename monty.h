@@ -49,4 +49,5 @@ void nop(stack_t **stack, unsigned int line_number);
 
 char **str_to_words(char *str);
 void (*get_ins_func(char *s))(stack_t **, unsigned int);
+void free_stack(stack_t **stack);
 #endif
