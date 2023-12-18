@@ -3,10 +3,10 @@
 /**
  * get_ins_func - selects the correct function to perform the instruction
  * @s: is the opcode as argument to program
- *
+ * @line: the line number
  * Return: a pionter to correct function
  */
-void (*get_ins_func(char *s))(stack_t **, unsigned int)
+void (*get_ins_func(char *s, unsigned int line))(stack_t **, unsigned int)
 {
 	int i;
 	instruction_t ins[] = {
@@ -27,5 +27,7 @@ void (*get_ins_func(char *s))(stack_t **, unsigned int)
 			return (ins[i].f);
 		i++;
 	}
+	dprintf(2, "L%d: unknown instruction %s", line, s);
+	exit(EXIT_FAILURE);
 	return (NULL);
 }

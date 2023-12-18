@@ -48,6 +48,6 @@ void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 
 char **str_to_words(char *str);
-void (*get_ins_func(char *s))(stack_t **, unsigned int);
+void (*get_ins_func(char *s, unsigned int line))(stack_t **, unsigned int);
 void free_stack(stack_t **stack);
 #endif

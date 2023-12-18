@@ -40,7 +40,7 @@ int main(int ac, char **av)
 				}
 				l_num = atoi(words[1]);
 			}
-			(get_ins_func(words[0]))(&stack, l_num);
+			(get_ins_func(words[0], l_num))(&stack, l_num);
 			free(words);
 		}
 	}
