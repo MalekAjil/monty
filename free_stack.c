@@ -9,7 +9,7 @@ void free_stack(stack_t **stack)
 {
 	stack_t *tmp1 = *stack, *tmp2 = *stack;
 
-	while(tmp2 != NULL)
+	while (tmp2 != NULL)
 	{
 		tmp1 = tmp2;
 		tmp2 = tmp1->next;

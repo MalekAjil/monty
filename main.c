@@ -8,8 +8,7 @@
  */
 int main(int ac, char **av)
 {
-	char *line = NULL;
-	char **words = NULL;
+	char *line = NULL, **words = NULL;
 	size_t n = 0;
 	int l_num = 0;
 	FILE *file;
