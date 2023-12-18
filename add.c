@@ -10,8 +10,11 @@ void add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *s = *stack, *prev = NULL;
 
-	if (s == NULL || s->next == NULL)
-		return;
+	 if (s == NULL || s->next == NULL)
+        {
+                dprintf(2, "L%d: can't swap, stack too short\n", line_number);
+                exit(EXIT_FAILURE);
+        }
 	while (s->next != NULL)
 	{
 		prev = s;
@@ -20,6 +23,4 @@ void add(stack_t **stack, unsigned int line_number)
 	prev->n += s->n;
 	free(s);
 	prev->next = NULL;
-	if (!line_number)
-		return;
 }
