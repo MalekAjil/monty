@@ -12,7 +12,7 @@ void add(stack_t **stack, unsigned int line_number)
 
 	 if (s == NULL || s->next == NULL)
         {
-                dprintf(2, "L%d: can't swap, stack too short\n", line_number);
+                dprintf(2, "L%d: can't add, stack too short\n", line_number);
                 exit(EXIT_FAILURE);
         }
 	while (s->next != NULL)
