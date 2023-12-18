@@ -23,7 +23,7 @@ void (*get_ins_func(char *s))(stack_t **, unsigned int)
 	i = 0;
 	while (ins[i].opcode != NULL)
 	{
-		if (ins[i].opcode == s)
+		if (!strcmp(ins[i].opcode, s))
 			return (ins[i].f);
 		i++;
 	}

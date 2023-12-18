@@ -16,7 +16,6 @@ char **str_to_words(char *str)
 		return (NULL);
 	while (str1[i])
 	{
-		printf("str: %c | c: %d\n", str[i], c);
 		if ((str[i] != ' ' && str[i] != '\n') && flag == 1)
 		{
 			c++;
@@ -26,7 +25,6 @@ char **str_to_words(char *str)
 			flag = 1;
 		i++;
 	}
-	printf("count: %d", c);
 	if (c > 0)
 	{
 		words = malloc(sizeof(char *) * (c));
